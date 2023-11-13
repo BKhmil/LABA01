@@ -1,17 +1,31 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int listSize = 100_000;
+        int insertionSize = 1_000;
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> linkedList = new LinkedList<>();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        ForWorkWithLists.fill(arrayList, listSize, "ArrayList");
+        ForWorkWithLists.fill(linkedList, listSize, "LinkedList");
+
+        ForWorkWithLists.randomAccess(arrayList, "ArrayList");
+        ForWorkWithLists.randomAccess(linkedList, "LinkedList");
+
+        ForWorkWithLists.sequentialAccess(arrayList, "ArrayList");
+        ForWorkWithLists.sequentialAccess(linkedList, "LinkedList");
+
+        ForWorkWithLists.insertAtBeginning(arrayList, insertionSize, "ArrayList");
+        ForWorkWithLists.insertAtBeginning(linkedList, insertionSize, "LinkedList");
+
+        ForWorkWithLists.insertAtEnd(arrayList, insertionSize, "ArrayList");
+        ForWorkWithLists.insertAtEnd(linkedList, insertionSize, "LinkedList");
+
+        ForWorkWithLists.insertInMiddle(arrayList, insertionSize, "ArrayList");
+        ForWorkWithLists.insertInMiddle(linkedList, insertionSize, "LinkedList");
     }
 }
